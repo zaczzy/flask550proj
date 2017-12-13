@@ -2,91 +2,90 @@
 <html>
 <head>
     <title>Movie Recommendation</title>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-        <!-- Custom styles for this template-->
-        <link rel="stylesheet" type="text/css" href="static/style.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- Custom styles for this template-->
+    <link rel="stylesheet" type="text/css" href="static/style.css">
 </head>
 <body data-spy="scroll" data-target=".scrollspy">
-    <header></header>
-    <div class="container">
+<header></header>
+<div class="container">
     <h1>Movie Recommendation</h1>
-        <p>Please fill the form below:</p>
-        <p>Category: </p>
-        <div>
+    <p>Please fill the form below:</p>
+    <p>Category: </p>
+    <div>
         <form action="/result" method="post">
             <select ng-model="firstLike" name="firstLike" id="firstCategory">
-            <option value="">Select your first choice</option>
-            <option value="drama">Drama</option>
-            <option value="documentary">Documentary</option>
-            <option value="comedy">Comedy</option>
-            <option value="action">Action</option>
-            <option value="romance">Romance</option>
-            <option value="thriller">Thriller</option>
-            <option value="crime">Crime</option>
-            <option value="horror">Horror</option>
-            <option value="adventure">Adventure</option>
-            <option value="family">Family</option>
-            <option value="biography">Biography</option>
-            <option value="mystery">Mystery</option>
-            <option value="history">History</option>
-            <option value="fantasy">Fantasy</option>
-            <option value="sci_fi">Sci_Fi</option>
-            <option value="musical">Musical</option>
-            <option value="music">Music</option>
-            <option value="adult">Adult</option>
-            <option value="war">War</option>
-            <option value="western">Western</option>
-            <option value="animation">Animation</option>
-            <option value="sport">Sport</option>
-            <option value="news">News</option>
-            <option value="film_noir">Film_Noir</option>
-            <option value="reality_tv">Reality_TV</option>
-            <option value="talk_show">Talk_Show</option>
-            <option value="game_show">Game_Show</option>
-            <option value="short">Short</option>
-        </select>
-        <select ng-model="secondLike" name="secondLike">
-            <option value="" disabled selected>Select your second choice</option>
-            <option value="drama">Drama</option>
-            <option value="documentary">Documentary</option>
-            <option value="comedy">Comedy</option>
-            <option value="action">Action</option>
-            <option value="romance">Romance</option>
-            <option value="thriller">Thriller</option>
-            <option value="crime">Crime</option>
-            <option value="horror">Horror</option>
-            <option value="adventure">Adventure</option>
-            <option value="family">Family</option>
-            <option value="biography">Biography</option>
-            <option value="mystery">Mystery</option>
-            <option value="history">History</option>
-            <option value="fantasy">Fantasy</option>
-            <option value="sci_fi">Sci_Fi</option>
-            <option value="musical">Musical</option>
-            <option value="music">Music</option>
-            <option value="adult">Adult</option>
-            <option value="war">War</option>
-            <option value="western">Western</option>
-            <option value="animation">Animation</option>
-            <option value="sport">Sport</option>
-            <option value="news">News</option>
-            <option value="film_noir">Film_Noir</option>
-            <option value="reality_tv">Reality_TV</option>
-            <option value="talk_show">Talk_Show</option>
-            <option value="game_show">Game_Show</option>
-            <option value="short">Short</option>
-        </select>
-        </div>
-        <p>
-            Actor you like: <input type="text" name="actorLike" ng-model="actorLike"></br>
-            Director you like: <input type="text" name="directorLike" ng-model="directorLike"></br>
-            Actor you dislike: <input type="text" name="actorDislike" ng-model="actorDislike"></br>
-            Director you dislike: <input type="text" name="directorDislike" ng-model="directorDislike"></br>
-        </p>
-         <input type="submit" value="Search" name="form">
+                <option value="">Select your first choice</option>
+                <option value="drama">Drama</option>
+                <option value="documentary">Documentary</option>
+                <option value="comedy">Comedy</option>
+                <option value="action">Action</option>
+                <option value="romance">Romance</option>
+                <option value="thriller">Thriller</option>
+                <option value="crime">Crime</option>
+                <option value="horror">Horror</option>
+                <option value="adventure">Adventure</option>
+                <option value="family">Family</option>
+                <option value="biography">Biography</option>
+                <option value="mystery">Mystery</option>
+                <option value="history">History</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="sci_fi">Sci_Fi</option>
+                <option value="musical">Musical</option>
+                <option value="music">Music</option>
+                <option value="adult">Adult</option>
+                <option value="war">War</option>
+                <option value="western">Western</option>
+                <option value="animation">Animation</option>
+                <option value="sport">Sport</option>
+                <option value="news">News</option>
+                <option value="film_noir">Film_Noir</option>
+                <option value="reality_tv">Reality_TV</option>
+                <option value="talk_show">Talk_Show</option>
+                <option value="game_show">Game_Show</option>
+                <option value="short">Short</option>
+            </select>
+            <select ng-model="secondLike" name="secondLike">
+                <option value="" disabled selected>Select your second choice</option>
+                <option value="drama">Drama</option>
+                <option value="documentary">Documentary</option>
+                <option value="comedy">Comedy</option>
+                <option value="action">Action</option>
+                <option value="romance">Romance</option>
+                <option value="thriller">Thriller</option>
+                <option value="crime">Crime</option>
+                <option value="horror">Horror</option>
+                <option value="adventure">Adventure</option>
+                <option value="family">Family</option>
+                <option value="biography">Biography</option>
+                <option value="mystery">Mystery</option>
+                <option value="history">History</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="sci_fi">Sci_Fi</option>
+                <option value="musical">Musical</option>
+                <option value="music">Music</option>
+                <option value="adult">Adult</option>
+                <option value="war">War</option>
+                <option value="western">Western</option>
+                <option value="animation">Animation</option>
+                <option value="sport">Sport</option>
+                <option value="news">News</option>
+                <option value="film_noir">Film_Noir</option>
+                <option value="reality_tv">Reality_TV</option>
+                <option value="talk_show">Talk_Show</option>
+                <option value="game_show">Game_Show</option>
+                <option value="short">Short</option>
+            </select>
+            <p>
+                Actor you like: <input type="text" name="actorLike" ng-model="actorLike"></br>
+                Director you like: <input type="text" name="directorLike" ng-model="directorLike"></br>
+                Actor you dislike: <input type="text" name="actorDislike" ng-model="actorDislike"></br>
+                Director you dislike: <input type="text" name="directorDislike" ng-model="directorDislike"></br>
+            </p>
+            <input type="submit" value="Search" name="form">
         </form>
-        
-
+    </div>
+</div>
 </body>
 </html>
