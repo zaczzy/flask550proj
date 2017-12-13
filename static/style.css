@@ -1,0 +1,19 @@
+input {
+	margin: 3px;
+}
+
+select{
+	margin: 3px;
+}
+
+.container{
+	margin: 20px auto;
+	width: 40%;
+	display: block;
+	text-align: center;
+}	
+
+
+a {
+  color: #00B7FF;
+}
