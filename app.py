@@ -59,6 +59,5 @@ def actor_results():
     # assert actor_obj is not None, "The result of finding the actor was None!"
     return render_template('actor_profile.html', actor=actor_obj)
 
-
 if __name__ == '__main__':
     app.run(host='localhost', port=8080)
