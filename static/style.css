@@ -1,18 +1,49 @@
-input {
-	margin: 3px;
+body {
+  background-image:url('../../static/home2.jpg');
+  color: white;
 }
 
-select{
-	margin: 3px;
-}
-
-.container{
+.container {
 	margin: 20px auto;
 	width: 40%;
 	display: block;
 	text-align: center;
-}	
+  font-family: 'Raleway', sans-serif;
+}
 
+select {
+  width: 500px;
+}
+
+input {
+	margin: 3px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-family: 'Pangolin', cursive;
+  font-size: 5em;
+}
+
+
+#searchMovie {
+  background: #e34234;
+  color: white;
+  width: 30%;
+  border-radius:10px;
+  height: 20%;
+  margin-top: 15px;
+}
+
+#searchMovie:hover {
+  background: black;
+  color: white;
+}
+
+select {
+	margin: 3px;
+}
 
 a {
   color: #00B7FF;

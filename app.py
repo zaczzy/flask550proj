@@ -1,12 +1,24 @@
 from flask import Flask, render_template, request
 import pymongo as mongo
 import sys
+from flask.ext.mysql import MySQL
 mongo_client = mongo.MongoClient(
     "mongodb://cis550mongo:cis550project@mongocluster-shard-00-00-5qypc.mongodb.net:27017,"
     "mongocluster-shard-00-01-5qypc.mongodb.net:27017,"
     "mongocluster-shard-00-02-5qypc.mongodb.net:27017/test?ssl=true&replicaSet=mongocluster-shard-0&authSource=admin")
 actors_db = mongo_client.actors
+
 app = Flask(__name__)
+
+mysql = MySQL()
+# MySQL configurations
+app.config['MYSQL_DATABASE_USER'] = 'feedmenews'
+app.config['MYSQL_DATABASE_PASSWORD'] = '12345678'
+app.config['MYSQL_DATABASE_DB'] = 'news'
+app.config['MYSQL_DATABASE_HOST'] = 'mydbfeedmenews.cffkuryafwgu.us-east-1.rds.amazonaws.com'
+mysql.init_app(app)
+cursor = mysql.connect().cursor()
+
 male_actors = actors_db.male
 female_actors = actors_db.female
 
@@ -26,8 +38,10 @@ def search():
     directorLike = request.form['directorLike']
     actorDislike = request.form['actorDislike']
     directorDislike = request.form['directorDislike']
-    return '%s +  %s  + %s + %s + %s + %s' % (
-        firstLike, secondLike, actorLike, directorLike, actorDislike, directorDislike)
+    sql = "SELECT * FROM movies m join act_in a on movie_id where a.people_id = 12 limit 4"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    return render_template('result.html', results=results)
 
 
 @app.route('/search_actors')

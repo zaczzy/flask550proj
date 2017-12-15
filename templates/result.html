@@ -5,10 +5,15 @@
 </head>
 <body>
 	<h1>Result Page</h1>
-	{% if data %}
-	  <p>{{ data }}!</p>
-	{% else %}
-	  <p>No data!</p>
-	{% endif %}
+	<div>
+	{% for row in results %}
+      <ul>
+         <li>{{ row[0] }}</li>
+         <li>{{ row[1] }}</li>
+         <li>{{ row[2] }}</li>
+         <li>{{ row[3] }}</li>
+      </ul>
+	{% endfor %}
+</div>
 </body>
 </html>
