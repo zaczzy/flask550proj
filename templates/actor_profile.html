@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actor Details</title>
+</head>
+<body>
+{% if actor %}
+    <h2>{{ actor.Name }}</h2>
+    <ul class=actor_info>
+
+        {% for key in actor %}
+            <li><h4> {{ key }}</h4> {{ actor[key]|safe }}
+        {% endfor %}
+    </ul>
+{% else %}
+    <h2> Oh no!</h2>
+    <em>Unbelievable. No information here so far</em>
+{% endif %}
+
+</body>
+</html>

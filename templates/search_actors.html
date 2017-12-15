@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search actors</title>
+</head>
+<body>
+<h4>Search Actor/Actress by Name</h4>
+<form action="/search_actors" method="post">
+    <dl>
+        <dt>Actor/Actress
+
+
+        <dd> <em>Name</em>
+        <input size=30 name="name" placeholder="Actor Name">
+
+        <dd>
+            <label> Male or Female?
+                <select name="sex">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </label>
+
+        <dd><input type=submit value="Search Actor">
+    </dl>
+</form>
+</body>
+</html>
