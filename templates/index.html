@@ -2,71 +2,70 @@
 <html>
 <head>
     <title>Movie Recommendation</title>
-        <!-- Custom styles for this template-->
-        <script
-          src="https://code.jquery.com/jquery-3.2.1.js"
-          integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-          crossorigin="anonymous"></script>
-        <script type="text/javascript" src="/static/chosen_v1.8.2/chosen.jquery.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="/static/chosen_v1.8.2/chosen.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-        <script type="text/javascript">
-            $(function(){
-                $(".chosen-select").chosen();
-            });
-        </script>
+    <!-- Custom styles for this template-->
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/chosen_v1.8.2/chosen.jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/chosen_v1.8.2/chosen.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script type="text/javascript">
+        $(function () {
+            $(".chosen-select").chosen();
+        });
+    </script>
 </head>
 <body data-spy="scroll" data-target=".scrollspy">
-    <h1>Movie Recommendation</h1>
-    <header></header>
-    <div class="container">
-        <h3>Please fill the form below:</h3>
-        <p>Category: </p>
-        <div>
+<h1>Movie Recommendation</h1>
+<header></header>
+<div class="container">
+    <h3>Please fill the form below:</h3>
+    <p>Category: </p>
+    <div>
         <form action="/result" method="post">
-        <select data-placeholder="Choose a category.." multiple class="chosen-select" name="category"> 
-            <option value=""></option>
-            <option value="drama">Drama</option>
-            <option value="documentary">Documentary</option>
-            <option value="comedy">Comedy</option>
-            <option value="action">Action</option>
-            <option value="romance">Romance</option>
-            <option value="thriller">Thriller</option>
-            <option value="crime">Crime</option>
-            <option value="horror">Horror</option>
-            <option value="adventure">Adventure</option>
-            <option value="family">Family</option>
-            <option value="biography">Biography</option>
-            <option value="mystery">Mystery</option>
-            <option value="history">History</option>
-            <option value="fantasy">Fantasy</option>
-            <option value="sci_fi">Sci_Fi</option>
-            <option value="musical">Musical</option>
-            <option value="music">Music</option>
-            <option value="adult">Adult</option>
-            <option value="war">War</option>
-            <option value="western">Western</option>
-            <option value="animation">Animation</option>
-            <option value="sport">Sport</option>
-            <option value="news">News</option>
-            <option value="film_noir">Film_Noir</option>
-            <option value="reality_tv">Reality_TV</option>
-            <option value="talk_show">Talk_Show</option>
-            <option value="game_show">Game_Show</option>
-            <option value="short">Short</option>
-        </select>
-        </div>
-        <p>
-            Actor you like: <input type="text" name="actorLike" ></br>
-            Director you like: <input type="text" name="directorLike" ></br>
-            Actor you dislike: <input type="text" name="actorDislike" ></br>
-            Director you dislike: <input type="text" name="directorDislike" ></br>
-        </p>
-         <input type="submit" value="Search" name="form" id="searchMovie">
+            <select data-placeholder="Choose a category.." multiple class="chosen-select" name="category">
+                <option value=""></option>
+                <option value="drama">Drama</option>
+                <option value="documentary">Documentary</option>
+                <option value="comedy">Comedy</option>
+                <option value="action">Action</option>
+                <option value="romance">Romance</option>
+                <option value="thriller">Thriller</option>
+                <option value="crime">Crime</option>
+                <option value="horror">Horror</option>
+                <option value="adventure">Adventure</option>
+                <option value="family">Family</option>
+                <option value="biography">Biography</option>
+                <option value="mystery">Mystery</option>
+                <option value="history">History</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="sci_fi">Sci_Fi</option>
+                <option value="musical">Musical</option>
+                <option value="music">Music</option>
+                <option value="adult">Adult</option>
+                <option value="war">War</option>
+                <option value="western">Western</option>
+                <option value="animation">Animation</option>
+                <option value="sport">Sport</option>
+                <option value="news">News</option>
+                <option value="film_noir">Film_Noir</option>
+                <option value="reality_tv">Reality_TV</option>
+                <option value="talk_show">Talk_Show</option>
+                <option value="game_show">Game_Show</option>
+                <option value="short">Short</option>
+            </select>
+            <p>
+                Actor or director you like : <input type="text" name="Like"></br>
+            </p>
+            <input type="submit" value="Search" name="form" id="searchMovie">
         </form>
-        
-
+    </div>
+</div>
+<div class="container">
+    <a href="/search"><b>Search Actor / Movie By Name</b></a>
+</div>
 </body>
 </html>

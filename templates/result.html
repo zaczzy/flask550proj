@@ -2,18 +2,40 @@
 <html>
 <head>
 	<title>Results</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
 </head>
-<body>
-	<h1>Result Page</h1>
-	<div>
-	{% for row in results %}
-      <ul>
-         <li>{{ row[0] }}</li>
-         <li>{{ row[1] }}</li>
-         <li>{{ row[2] }}</li>
-         <li>{{ row[3] }}</li>
-      </ul>
-	{% endfor %}
-</div>
+<body data-spy="scroll" data-target=".scrollspy">
+	<h1>Movies</h1>
+	<div id="container">
+		{% for row in results %}
+		<div class="search-item__content">
+	        <p class="text--medium">
+	          Title : {{ row[0] }}
+	        </p>
+	        <p class="text--small text--muted">Runtime: {{ row[1] }}</p>
+	        <p class="text--small text--muted">Genres:  {{  row[2] }}</p>
+	        <p class="text--small text--muted">Actor:  {{  row[3] }}, Director: {{ row[4] }}</p>
+	        <p class="text--small text--muted">Average Ratings:  {{  row[5] }}, Vote by {{ row[6] }}</p>
+      	</div>
+		{% endfor %}
+
+	</div>
+	<h1>Actors</h1>
+	<div id="container">
+		<div class="search-item__content">
+	        <p class="text--medium">
+	          Name : <a href=/detail/{{people[5]}}"">{{ people[0] }}</span>
+	        </p>
+	        <p class="text--small text--muted">Gender : {{ people[1] }}</p>
+	        <p class="text--small text--muted">birth year : {{  people[2] }}, death year : {{ people[3] }}</p>
+	        <p class="text--small text--muted">primary profession : {{ people[4] }}</p>
+      	</div>
+		<form action="/">
+    		<input type="submit" value="Back" id="back" />
+		</form>
+	</div>
+
 </body>
 </html>

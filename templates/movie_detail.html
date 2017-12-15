@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+{# sql1 = "SELECT primaryTitle, runtimeMinutes, genres \#}
+{#                  FROM movies \#}
+{#                  WHERE primaryTitle = '" + movie_name + "';"#}
+{#        sql2 = "SELECT 0original_title, 1runtime, 2tagline, 3vote_average,  \#}
+{#               4vote_count, 5spoken_languages, 6overview, 7keywords, 8genres, 9homepage,  \#}
+{#               10budget, 11production_companies, 12revenue, \#}
+{#               cast, crew \#}
+{#               FROM movie_500 \#}
+{#               WHERE original_title = '" + movie_name + "';"#}
+<body>
+{% if movie_result %}
+    <h1>{{ movie_result.primaryTitle }}</h1>
+    <ul>
+    <li>Runtime: {{ result_500[1] or movie_result.runtimeMinutes }} mins</li>
+    <li>Genres:
+        <ul>
+            {% for genre in movie_result.genres %}
+                {% if genre != "-" %}
+                    <li>{{ genre }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </li>
+{% else %}
+    <h2> Oh no!</h2>
+    <em>Unbelievable. No information here so far</em>
+{% endif %}
+{% if result_500 %}
+    <li>Vote Average: {{ result_500[3] }}</li>
+    <li>Vote Counts: {{ result_500[4] }}</li>
+    <li>Spoken Languages: {{ result_500[5] }}</li>
+    <li>Second Genres: {{ result_500[8] }}</li>
+    <li> <a href="{{ result_500[9] }}"> HOMEPAGE</a></li>
+    </ul>
+    <p>{{ result_500[2] }}</p>
+    <p>{{ result_500[6] }}</p>
+    <p>{{ result_500[7] }}</p>
+{% else %}
+    </ul>
+    <h2> Oh no!</h2>
+    <em>Unbelievable. No information here so far</em>
+{% endif %}
+</div>
+</body>
+</html>

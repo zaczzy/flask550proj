@@ -1,6 +1,7 @@
 body {
-  background-image:url('../../static/home2.jpg');
+  background-image:url('/static/home2.jpg');
   color: white;
+    font-size: 3em;
 }
 
 .container {

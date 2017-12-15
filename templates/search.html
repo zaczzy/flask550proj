@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search actors</title>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/chosen_v1.8.2/chosen.jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h4>Search Actor/Actress by Name</h4>
+<h2 style="color: red"><b>{{ message }}</b></h2>
+<form action="/search_actors" method="post">
+    <dl>
+        <dt>Actor/Actress
+        <dd> <em>Name</em>
+        <input size=30 name="name" placeholder="Actor Name">
+
+        <dd>
+            <label> Male or Female?
+                <select name="sex" class="chosen-choices">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </label>
+
+        <dd><input type=submit value="Search Actor">
+    </dl>
+</form>
+
+<h4>Search Movie by Name</h4>
+<form action="/search_movies" method="post">
+    <dl>
+        <dt>Movie
+        <dd> <em>Name</em>
+        <dd> <input size=30 name="movie" placeholder="Movie Name"></dd>
+        <dd><input type=submit value="Search Movie">
+    </dl>
+</form>
+</body>
+</html>

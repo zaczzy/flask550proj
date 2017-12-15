@@ -3,20 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Actor Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/actor_profile.css">
+    <link rel="stylesheet" type="text/css" href="/static/chosen_v1.8.2/chosen.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-{% if actor %}
-    <h2>{{ actor.Name }}</h2>
-    <ul class=actor_info>
 
-        {% for key in actor %}
-            <li><h4> {{ key }}</h4> {{ actor[key]|safe }}
-        {% endfor %}
-    </ul>
-{% else %}
-    <h2> Oh no!</h2>
-    <em>Unbelievable. No information here so far</em>
-{% endif %}
+<table class="info_table">
+    <tr>
+        <th><h2 style="font-size: 7em;">{{ extra.Name }}</h2></th>
+        <th>{% if basic.ImageUrl %}
+            <img src="{{ basic.ImageUrl }}">
+        {% endif %}
+        </th>
+    </tr>
+    <tr>
+        <td>
+            {% if basic %}
+                <h3>Basic Information</h3>
+                <ul class=actor_basic>
+                    {% for key in basic %}
+                        {% if key not in ["_id", "Name", "ImageUrl"] %}
+                            <li><a href="{{ basic[key]|safe }}"> {{ key }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <h2> Oh no!</h2>
+                <em>Unbelievable. No information here so far</em>
+            {% endif %}
+        </td>
+        <td>
+            {% if extra %}
+                <h3>Extra Information</h3>
+                <ul class=actor_extra>
 
+                    {% for key in extra %}
+                        <li><h4> {{ key }}</h4> {{ extra[key]|safe }}</li>
+                    {% endfor %}
+                </ul>
+
+            {% else %}
+                <h2> Oh no!</h2>
+                <em>Unbelievable. No information here so far</em>
+            {% endif %}
+        </td>
+    </tr>
+</table>
 </body>
 </html>
